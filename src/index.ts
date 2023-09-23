@@ -70,6 +70,8 @@ const comparePosition = (position: Position, other: Position): number => {
 };
 
 const positionInRange = (position: Position, range: Range): number => {
+  if (!range) return -1;
+
   const { start, end } = range;
   if (comparePosition(position, start) < 0) return -1;
   if (comparePosition(position, end) > 0) return 1;
